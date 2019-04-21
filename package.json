@@ -8,17 +8,9 @@
     "clean": "rimraf dist",
     "build": "rimraf dist && tsc -d"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/quickts/typescript-template.git"
-  },
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/quickts/typescript-template/issues"
-  },
-  "homepage": "https://github.com/quickts/typescript-template#readme",
   "devDependencies": {
     "@types/mocha": "^5.2.6",
     "@types/node": "^11.13.6",
