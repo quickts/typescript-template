@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [{
+            "name": "current project",
+            "type": "node",
+            "request": "launch",
+            "args": [
+                "${workspaceRoot}/src/index.ts"
+            ],
+            "runtimeArgs": ["--nolazy", "-r", "./ts-register"],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "current file",
+            "type": "node",
+            "request": "launch",
+            "args": ["${relativeFile}"],
+            "runtimeArgs": ["--nolazy", "-r", "./ts-register"],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "current test file(mocha)",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "args": [
+                "-r",
+                "./ts-register",
+                "${relativeFile}",
+                "--colors",
+                "-t 100000"
+            ],
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector"
+        }
+    ]
+}
