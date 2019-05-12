@@ -1,13 +1,17 @@
 {
     "version": "0.2.0",
     "configurations": [{
-            "name": "current project",
+            "name": "project",
             "type": "node",
             "request": "launch",
             "args": [
                 "${workspaceRoot}/src/index.ts"
             ],
-            "runtimeArgs": ["--nolazy", "-r", "./ts-register"],
+            "runtimeArgs": [
+                "--nolazy",
+                "-r", "tsconfig-paths/register",
+                "-r", "ts-node/register"
+            ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
             "protocol": "inspector",
@@ -15,11 +19,15 @@
             "internalConsoleOptions": "neverOpen"
         },
         {
-            "name": "current file",
+            "name": "file",
             "type": "node",
             "request": "launch",
             "args": ["${relativeFile}"],
-            "runtimeArgs": ["--nolazy", "-r", "./ts-register"],
+            "runtimeArgs": [
+                "--nolazy",
+                "-r", "tsconfig-paths/register",
+                "-r", "ts-node/register"
+            ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
             "protocol": "inspector",
@@ -27,13 +35,13 @@
             "internalConsoleOptions": "neverOpen"
         },
         {
-            "name": "current test file(mocha)",
+            "name": "test file(mocha)",
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
             "args": [
-                "-r",
-                "./ts-register",
+                "-r", "tsconfig-paths/register",
+                "-r", "ts-node/register",
                 "${relativeFile}",
                 "--colors",
                 "-t 100000"
